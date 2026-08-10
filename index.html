@@ -1,243 +1,163 @@
 <!DOCTYPE html>
 <html lang="ku" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DARGA2DARGA - بەدواداچوونی داواکاری</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darga 2 Darga - Order Tracking</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
 
-body {
-  margin: 0;
-  background: #f4f6fa;
-  font-family: Arial, Tahoma, sans-serif;
-  color: #202533;
-}
+    .box {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
 
-.container {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 15px;
-}
+    h1 {
+      text-align: center;
+    }
 
-.card {
-  background: white;
-  border-radius: 28px;
-  padding: 28px;
-  margin-bottom: 18px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.06);
-}
+    .order {
+      margin-top: 25px;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 14px;
+    }
 
-.header {
-  text-align: center;
-  padding: 25px 20px;
-}
+    .row {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
 
-.logo {
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: #006b6b;
-}
+    .status {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
 
-.brand {
-  font-size: 17px;
-  color: #777;
-  margin-top: 5px;
-  letter-spacing: 3px;
-}
-
-.title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 25px;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 17px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.row:last-child {
-  border-bottom: none;
-}
-
-.label {
-  color: #777;
-  font-size: 15px;
-}
-
-.value {
-  font-size: 19px;
-  font-weight: bold;
-}
-
-.total {
-  background: #f8fafc;
-  border-radius: 18px;
-  padding: 20px;
-  margin-top: 15px;
-}
-
-.total .value {
-  color: #e33b4b;
-  font-size: 26px;
-}
-
-.status-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 18px 0;
-}
-
-.circle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #eef1f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #777;
-}
-
-.step.active .circle {
-  background: #1769e0;
-  color: white;
-}
-
-.step.done .circle {
-  background: #168b58;
-  color: white;
-}
-
-.step-text {
-  font-size: 16px;
-}
-
-.step.active .step-text,
-.step.done .step-text {
-  font-weight: bold;
-}
-
-.order {
-  text-align: center;
-  color: #777;
-  margin-top: 10px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  .card {
-    border-radius: 22px;
-    padding: 22px;
-  }
-}
-</style>
+    .error {
+      text-align: center;
+      color: #c00;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="box">
 
-  <div class="card header">
-    <div class="logo">DARGA2DARGA</div>
-    <div class="brand">دەرگا 2 دەرگا</div>
+  <h1>دەرگا ٢ دەرگا</h1>
 
-    <div class="title">
-      📦 بەدواداچوونی داواکاری
-    </div>
-
-    <div class="order">
-      ژمارەی داواکاری: <strong>#1001</strong>
-    </div>
-  </div>
-
-
-  <div class="card">
-
-    <div class="row">
-      <div class="label">💰 نرخی کاڵا</div>
-      <div class="value">IQD 129,250</div>
-    </div>
-
-    <div class="row">
-      <div class="label">🚚 کرێی گەیاندن</div>
-      <div class="value">IQD 3,000</div>
-    </div>
-
-    <div class="row">
-      <div class="label">💵 کۆی پارەی داواکاری</div>
-      <div class="value">IQD 132,250</div>
-    </div>
-
-    <div class="total">
-      <div class="row">
-        <div class="label">پارەی ماوە</div>
-        <div class="value">IQD 132,250</div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="card">
-
-    <div class="status-title">
-      📍 بەدواداچوونی داواکاری
-    </div>
-
-    <div class="step done">
-      <div class="circle">✓</div>
-      <div class="step-text">گەڕاوە</div>
-    </div>
-
-    <div class="step done">
-      <div class="circle">✓</div>
-      <div class="step-text">دەنێردرێت</div>
-    </div>
-
-    <div class="step done">
-      <div class="circle">✓</div>
-      <div class="step-text">نێردراوە بۆ دووین</div>
-    </div>
-
-    <div class="step done">
-      <div class="circle">✓</div>
-      <div class="step-text">گەیشتووە هەولێر</div>
-    </div>
-
-    <div class="step active">
-      <div class="circle">5</div>
-      <div class="step-text">لە ڕێگادایە / شۆفێر</div>
-    </div>
-
-    <div class="step">
-      <div class="circle">6</div>
-      <div class="step-text">گەیەندراوە</div>
-    </div>
-
-  </div>
+  <div id="content"></div>
 
 </div>
+
+<script>
+
+const orders = {
+
+  "DG-0001": {
+    name: "کڕیاری یەکەم",
+    order: "ئۆردەری ژمارە 0001",
+    product: "کاڵای نموونە",
+    quantity: "1",
+    price: "$100",
+    status: "لە ڕێگادایە"
+  },
+
+  "DG-0002": {
+    name: "کڕیاری دووەم",
+    order: "ئۆردەری ژمارە 0002",
+    product: "کاڵای نموونە",
+    quantity: "2",
+    price: "$200",
+    status: "ئامادەیە"
+  }
+
+};
+
+
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+
+const content = document.getElementById("content");
+
+
+if (code && orders[code]) {
+
+  const order = orders[code];
+
+  content.innerHTML = `
+
+    <h2>بەخێربێیت ${order.name}</h2>
+
+    <div class="order">
+
+      <div class="row">
+        <b>کۆدی ئۆردەر:</b><br>
+        ${code}
+      </div>
+
+      <div class="row">
+        <b>ژمارەی ئۆردەر:</b><br>
+        ${order.order}
+      </div>
+
+      <div class="row">
+        <b>کاڵا:</b><br>
+        ${order.product}
+      </div>
+
+      <div class="row">
+        <b>بڕ:</b><br>
+        ${order.quantity}
+      </div>
+
+      <div class="row">
+        <b>نرخ:</b><br>
+        ${order.price}
+      </div>
+
+      <div class="row">
+        <b>بارودۆخ:</b><br><br>
+        <span class="status">${order.status}</span>
+      </div>
+
+    </div>
+
+  `;
+
+} else {
+
+  content.innerHTML = `
+
+    <div class="error">
+
+      <h2>کۆدی ئۆردەر هەڵەیە</h2>
+
+      <p>
+        تکایە لینکی دروست بەکاربهێنە.
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+</script>
 
 </body>
 </html>
